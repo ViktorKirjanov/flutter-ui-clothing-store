@@ -1,4 +1,4 @@
-import 'package:clothing_store/utils/colors.dart';
+import 'package:clothing_store/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,16 +12,16 @@ class Search extends StatelessWidget {
         autofillHints: null,
         autofocus: false,
         style: TextStyle(
-          color: HexColor('2a2b2a'),
+          color: AppTheme.mineShaft,
         ),
-        cursorColor: HexColor('a3a3a3'),
+        cursorColor: AppTheme.silverChalice,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(3),
           filled: true,
           fillColor: Colors.white,
           hintText: 'Search product',
           hintStyle: TextStyle(
-            color: HexColor('a3a3a3'),
+            color: AppTheme.silverChalice,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(50.0),
@@ -32,7 +32,7 @@ class Search extends StatelessWidget {
             child: SvgPicture.asset(
               'assets/icons/magnifying-glass.svg',
               height: 10,
-              color: HexColor('a3a3a3'),
+              color: AppTheme.silverChalice,
             ),
           ),
         ),

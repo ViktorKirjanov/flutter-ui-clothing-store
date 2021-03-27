@@ -1,4 +1,4 @@
-import 'package:clothing_store/utils/colors.dart';
+import 'package:clothing_store/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class Dot extends StatelessWidget {
@@ -15,7 +15,7 @@ class Dot extends StatelessWidget {
         width: 4,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: active ? Colors.white : HexColor('555555'),
+          color: active ? Colors.white : AppTheme.emperor,
         ),
       ),
     );

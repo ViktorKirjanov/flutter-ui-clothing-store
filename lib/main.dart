@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:clothing_store/utils/colors.dart';
-import 'package:flutter/foundation.dart';
+import 'package:clothing_store/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,24 +12,27 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle.dark.copyWith(
+          statusBarColor: Colors.white, // this one for android
+          statusBarBrightness: Brightness.light // this one for iOS
+          ),
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Clothing Store UI',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Animated Navigation Bottom Bar'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -52,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage>
   void initState() {
     super.initState();
     final systemTheme = SystemUiOverlayStyle.light.copyWith(
-      systemNavigationBarColor: HexColor('#373A36'),
+      systemNavigationBarColor: AppTheme.mineShaft,
       systemNavigationBarIconBrightness: Brightness.light,
     );
     SystemChrome.setSystemUIOverlayStyle(systemTheme);
@@ -89,13 +91,13 @@ class _MyHomePageState extends State<MyHomePage>
         scale: animation,
         child: FloatingActionButton(
           elevation: 0,
-          backgroundColor: HexColor('#333332'),
-          child: Container(  
+          backgroundColor: AppTheme.tuatara,
+          child: Container(
             child: Center(
               child: SvgPicture.asset(
                 'assets/icons/scan.svg',
                 height: 25,
-                color: HexColor('#fcfcfc'),
+                color: AppTheme.alabaster,
               ),
             ),
           ),
@@ -106,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage>
       bottomNavigationBar: AnimatedBottomNavigationBar.builder(
         itemCount: iconList.length,
         tabBuilder: (int index, bool isActive) {
-          final color = isActive ? HexColor('#becc67') : HexColor('#a4a4a4');
+          final color = isActive ? AppTheme.manz : AppTheme.silverChalice;
           return Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -125,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage>
         },
         backgroundColor: Colors.white,
         activeIndex: _bottomNavIndex,
-        splashColor: HexColor('#becc67'),
+        splashColor: AppTheme.manz,
         notchAndCornersAnimation: animation,
         splashSpeedInMilliseconds: 300,
         notchSmoothness: NotchSmoothness.smoothEdge,
@@ -134,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage>
         rightCornerRadius: 40,
         splashRadius: 30,
         notchMargin: 10,
-        elevation: 8,
+        elevation: 4,
         onTap: (index) {
           print("--- page index: $index");
           setState(

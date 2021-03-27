@@ -1,5 +1,5 @@
-import 'package:clothing_store/screens/setup_screen/setup_screen.dart';
-import 'package:clothing_store/utils/colors.dart';
+import 'package:clothing_store/screens/item_screen/item_screen.dart';
+import 'package:clothing_store/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -81,8 +81,8 @@ class _ItemState extends State<Item> {
                     spacing: 4.0,
                     dotWidth: 4.0,
                     dotHeight: 4.0,
-                    dotColor: HexColor('c4c4c4'),
-                    activeDotColor: HexColor('333332'),
+                    dotColor: AppTheme.silver,
+                    activeDotColor: AppTheme.mineShaft,
                   ),
                 ),
               ),
@@ -99,7 +99,7 @@ class _ItemState extends State<Item> {
                       Text(
                         widget.name,
                         style: TextStyle(
-                          color: HexColor('3a3a3a'),
+                          color: AppTheme.mineShaft,
                           fontSize: 12,
                           fontWeight: FontWeight.w700,
                         ),
@@ -107,7 +107,7 @@ class _ItemState extends State<Item> {
                       Text(
                         '\$${widget.price}',
                         style: TextStyle(
-                          color: HexColor('3a3a3a'),
+                          color: AppTheme.mineShaft,
                           fontSize: 12,
                           fontWeight: FontWeight.w700,
                         ),
@@ -118,7 +118,7 @@ class _ItemState extends State<Item> {
                   Text(
                     widget.brand,
                     style: TextStyle(
-                      color: HexColor('bbbbbb'),
+                      color: AppTheme.silver,
                       fontSize: 10,
                       fontWeight: FontWeight.w700,
                     ),
@@ -132,7 +132,7 @@ class _ItemState extends State<Item> {
       onTap: () {
         Navigator.of(context, rootNavigator: true).push(
           MaterialPageRoute<bool>(
-            builder: (BuildContext context) => SetupScreen(),
+            builder: (BuildContext context) => ItemScreen(),
           ),
         );
       },

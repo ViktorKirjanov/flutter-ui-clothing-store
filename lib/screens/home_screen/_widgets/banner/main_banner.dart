@@ -1,4 +1,4 @@
-import 'package:clothing_store/utils/colors.dart';
+import 'package:clothing_store/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'dot.dart';
@@ -19,7 +19,7 @@ class MainBanner extends StatelessWidget {
               height: 175,
               width: MediaQuery.of(context).size.width,
               decoration: new BoxDecoration(
-                color: HexColor('2a2a2a'),
+                color: AppTheme.mineShaft,
                 borderRadius: new BorderRadius.all(
                   Radius.elliptical(50, 45),
                 ),
@@ -41,7 +41,7 @@ class MainBanner extends StatelessWidget {
                     Text(
                       'up to 70%',
                       style: TextStyle(
-                        color: HexColor('d7e773'),
+                        color: AppTheme.manz,
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                       ),

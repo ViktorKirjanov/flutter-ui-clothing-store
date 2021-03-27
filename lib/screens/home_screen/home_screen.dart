@@ -1,4 +1,4 @@
-import 'package:clothing_store/utils/colors.dart';
+import 'package:clothing_store/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import '_widgets/banner/banners.dart';
@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HexColor('#f3f3f0'),
+      backgroundColor: AppTheme.cararra,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     Text(
                       'Special Items',
                       style: TextStyle(
-                        color: HexColor('333332'),
+                        color: AppTheme.mineShaft,
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                       ),

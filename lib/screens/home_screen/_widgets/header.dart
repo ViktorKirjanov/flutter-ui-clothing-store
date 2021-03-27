@@ -1,6 +1,7 @@
-import 'package:clothing_store/utils/colors.dart';
+import 'package:clothing_store/utils/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+import 'alert_button.dart';
 
 class Header extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class Header extends StatelessWidget {
               Text(
                 'Hi Rebeca',
                 style: TextStyle(
-                  color: HexColor('bbbbbb'),
+                  color: AppTheme.silver,
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                 ),
@@ -25,30 +26,14 @@ class Header extends StatelessWidget {
               Text(
                 'What is your outfit Today?',
                 style: TextStyle(
-                  color: HexColor('333332'),
+                  color: AppTheme.mineShaft,
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                 ),
               ),
             ],
           ),
-          Container(
-            height: 55.0,
-            width: 55.0,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-            ),
-            child: Container(
-              child: Center(
-                child: SvgPicture.asset(
-                  'assets/icons/notification.svg',
-                  height: 20,
-                  color: HexColor('373734'),
-                ),
-              ),
-            ),
-          )
+          AlertButton(),
         ],
       ),
     );
