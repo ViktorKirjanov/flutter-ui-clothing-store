@@ -8,7 +8,7 @@ class MainBannerList extends StatefulWidget {
 }
 
 class _MainBannerListState extends State<MainBannerList> {
-  PageController _pageController;
+  late PageController _pageController;
 
   @override
   void initState() {

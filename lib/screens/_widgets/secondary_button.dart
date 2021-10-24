@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class SecondaryButton extends StatelessWidget {
   final String text;
 
-  const SecondaryButton({Key key, @required this.text}) : super(key: key);
+  const SecondaryButton({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

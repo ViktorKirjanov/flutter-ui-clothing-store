@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Dot extends StatelessWidget {
   final bool active;
 
-  const Dot({Key key, this.active = false}) : super(key: key);
+  const Dot({Key? key, this.active = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

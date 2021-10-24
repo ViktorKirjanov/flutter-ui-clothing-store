@@ -8,7 +8,7 @@ class ItemSlider extends StatefulWidget {
 }
 
 class _ItemSliderState extends State<ItemSlider> {
-  PageController _controller;
+  late PageController _controller;
 
   @override
   void initState() {

@@ -10,11 +10,11 @@ class Item extends StatefulWidget {
   final String image;
 
   const Item({
-    Key key,
-    @required this.name,
-    @required this.brand,
-    @required this.price,
-    @required this.image,
+    Key? key,
+    required this.name,
+    required this.brand,
+    required this.price,
+    required this.image,
   }) : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  PageController _controller;
+  late PageController _controller;
 
   @override
   void initState() {

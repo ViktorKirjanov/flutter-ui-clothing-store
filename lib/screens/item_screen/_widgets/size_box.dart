@@ -6,8 +6,8 @@ class SizeBox extends StatelessWidget {
   final bool active;
 
   const SizeBox({
-    Key key,
-    this.text,
+    Key? key,
+    required this.text,
     this.active = false,
   }) : super(key: key);
 

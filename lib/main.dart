@@ -41,9 +41,9 @@ class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   var _bottomNavIndex = 0;
 
-  AnimationController _animationController;
-  Animation<double> animation;
-  CurvedAnimation curve;
+  late AnimationController _animationController;
+  late Animation<double> _animation;
+  late CurvedAnimation _curve;
 
   final iconList = <String>[
     'assets/icons/home.svg',
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage>
       duration: Duration(seconds: 1),
       vsync: this,
     );
-    curve = CurvedAnimation(
+    _curve = CurvedAnimation(
       parent: _animationController,
       curve: Interval(
         0.5,
@@ -71,10 +71,10 @@ class _MyHomePageState extends State<MyHomePage>
         curve: Curves.fastOutSlowIn,
       ),
     );
-    animation = Tween<double>(
+    _animation = Tween<double>(
       begin: 0,
       end: 1,
-    ).animate(curve);
+    ).animate(_curve);
 
     Future.delayed(
       Duration(seconds: 1),
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage>
       extendBody: true,
       body: HomeScreen(),
       floatingActionButton: ScaleTransition(
-        scale: animation,
+        scale: _animation,
         child: FloatingActionButton(
           elevation: 0,
           backgroundColor: AppTheme.tuatara,
@@ -128,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage>
         backgroundColor: Colors.white,
         activeIndex: _bottomNavIndex,
         splashColor: AppTheme.manz,
-        notchAndCornersAnimation: animation,
+        notchAndCornersAnimation: _animation,
         splashSpeedInMilliseconds: 300,
         notchSmoothness: NotchSmoothness.smoothEdge,
         gapLocation: GapLocation.center,
